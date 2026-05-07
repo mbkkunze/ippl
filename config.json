@@ -4,7 +4,7 @@
       "length-scale" : "micrometers",
       "time-scale"   : "picoseconds",
       "extents": [3400.0, 3400.0, 280.0],
-      "resolution": [64, 64, 2800],
+      "resolution": [32, 32, 1400],
       "mesh-center": [0.0, 0.0, 0.0],
       "total-time": 30000.0,
       "bunch-time-step": 1.6,

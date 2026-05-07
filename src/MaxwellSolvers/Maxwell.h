@@ -32,8 +32,8 @@ namespace ippl {
          * @param E The electric field
          * @param B The magnetic field
          */
-        Maxwell(SourceField& four_current, EMField& E, EMField& B) {
-            setSources(four_current);
+        Maxwell(FourField& four_current, EMField& E, EMField& B) {
+            setSource(four_current);
             setEMFields(E, B);
         }
 
@@ -41,7 +41,7 @@ namespace ippl {
          * Set the problem RHS (charge & current densities)
          * @param four_current The four current field (rho, J)
          */
-        virtual void setSources(SourceField& four_current) { JN_mp = &four_current; }
+        virtual void setSource(FourField& four_current) { source_mp = &four_current; }
 
         /*!
          * Set the problem LHS (electromagnetic fields)
@@ -62,7 +62,7 @@ namespace ippl {
 
     protected:
         // Field for four-current (rho, J)
-        SourceField* JN_mp = nullptr;
+        FourField* source_mp = nullptr;
 
         // E and B fields
         EMField* En_mp = nullptr;
